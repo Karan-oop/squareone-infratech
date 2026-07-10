@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATTOPE Real Estate</title>
+    <title>SQUAREONE INFRATECH</title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +80,7 @@
             gap: 10px;
         }
         .btn-get-started i {
-            background-color: black;
+            background-color:#0b1f3a;
             color: white;
             padding: 2px 5px;
             border-radius: 3px;
@@ -91,19 +91,24 @@
             position: relative;
             height: 100vh;
             min-height: 800px;
-            background-image: url('https://images.unsplash.com/photo-1783388814220-9851f3da88f6?w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
+            overflow: hidden;
+        }
+        .hero-video {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 0;
         }
         .hero::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.7);
+            z-index: 1;
         }
         .hero-content {
             position: relative;
@@ -113,11 +118,11 @@
             margin-top: 50px;
         }
         .hero-title-bg {
-            font-size: 15vw;
+            font-size: 8vw;
             font-weight: 800;
             line-height: 1;
             margin: 0;
-            letter-spacing: -5px;
+            letter-spacing: -3px;
             text-transform: uppercase;
         }
         .hero-title-fg {
@@ -230,7 +235,37 @@
 
         /* Section Padding */
         .section-padding {
-            padding: 100px 0;
+            padding: 150px 0;
+        }
+
+        /* Partners Marquee */
+        .partner-marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            background: #f8f9fa;
+            padding: 50px 0;
+            border-bottom: 1px solid #eaeaea;
+            position: relative;
+            z-index: 5;
+        }
+        .marquee-track {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
+        .marquee-track img {
+            height: 60px;
+            margin: 0 50px;
+            filter: grayscale(0%);
+            opacity: 0.5;
+            transition: all 0.3s;
+        }
+        .marquee-track img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         /* Features Section */
@@ -314,7 +349,8 @@
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            height: 700px;
+            height: 950px;
+            margin-left: -30px;
         }
         .property-img-wrapper img {
             width: 100%;
@@ -391,6 +427,66 @@
             color: #666;
             font-size: 0.9rem;
             margin: 0;
+        }
+
+        /* Services Section */
+        .services-section {
+            background-color: #f4f6f9;
+            padding: 120px 0;
+        }
+        .services-subtitle {
+            text-transform: uppercase;
+            color: var(--accent-color);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .services-title {
+            font-family: var(--primary-font);
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #0b1f3a;
+        }
+        .services-desc {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            height: 100%;
+            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-icon-box {
+            width: 70px;
+            height: 70px;
+            background: #0b1f3a;
+            color: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 25px;
+        }
+        .service-card h5 {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            color: #666;
+            font-size: 0.85rem;
+            margin: 0;
+            line-height: 1.6;
         }
 
         /* Experience Section */
@@ -494,8 +590,8 @@
             font-weight: 600;
         }
         .btn-search {
-            background-color: var(--accent-color);
-            color: black;
+            background-color: #0b1f3a;
+            color: white;
             border-radius: 10px;
             padding: 15px 25px;
             display: inline-flex;
@@ -508,6 +604,7 @@
         }
         .btn-search span {
             background: white;
+            color:#000;
             border-radius: 5px;
             padding: 5px 10px;
         }
@@ -520,6 +617,47 @@
         .apartments-section {
             background-color: var(--light-bg);
             padding: 100px 0;
+            overflow: hidden;
+        }
+         .apt-marquee-wrapper {
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 20px 0;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+        .apt-marquee-track {
+            display: flex;
+            gap: 24px;
+            width: max-content;
+        }
+        .apt-track-left {
+            animation: aptMarqueeLeft 35s linear infinite;
+        }
+        .apt-track-right {
+            animation: aptMarqueeRight 40s linear infinite;
+        }
+        .apt-marquee-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes aptMarqueeLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes aptMarqueeRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .apt-marquee-track .apt-card {
+            width: 400px;
+            flex-shrink: 0;
+            margin: 0;
         }
         .apt-card {
             background: white;
@@ -582,7 +720,7 @@
             text-align: center;
             line-height: 1;
             letter-spacing: -2px;
-            color: var(--dark-bg);
+            color: #0b1f3a;
             margin-bottom: -50px; /* Overlap image */
             position: relative;
             z-index: 1;
@@ -600,13 +738,15 @@
             background-color: #d0d0d0;
             border-radius: 20px;
             transition: transform 0.5s ease;
+            background-size: cover;
+            background-position: center;
         }
         .stack-bg-1 {
-            background-color: #b0b0b0;
+            background-image: url('https://images.unsplash.com/photo-1777477446816-a6981a467314?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             animation: slideBg1 4s infinite alternate ease-in-out;
         }
         .stack-bg-2 {
-            background-color: #888;
+            background-image: url('https://images.unsplash.com/photo-1777477446816-a6981a467314?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             animation: slideBg2 4s infinite alternate ease-in-out;
         }
         @keyframes slideBg1 {
@@ -625,6 +765,28 @@
             z-index: 3;
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
+        .team-member-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 20px;
+            border-radius: 12px;
+            color: black;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(5px);
+        }
+        .team-member-info h5 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .team-member-info p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
         .quote-icon {
             font-size: 4rem;
             color: var(--accent-color);
@@ -632,6 +794,79 @@
             margin-bottom: 20px;
         }
         
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--light-bg);
+            padding: 100px 0 100px;
+        }
+        .testi-badge {
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .testi-title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #0b1f3a;
+        }
+        .testi-desc {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .testi-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            text-align: center;
+            height: 100%;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+        .testi-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .testi-card h5 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        .testi-handle {
+            color: #888;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+        .testi-text {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .testi-rating {
+            color: #ffd700;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+        .testi-card.center-card:hover {
+            transform: translateY(-20px) rotate(-4deg) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            z-index: 2;
+            position: relative;
+        }
+
         /* FAQ Section */
         .faq-section {
             background-color: var(--light-bg);
@@ -644,7 +879,7 @@
         }
         .faq-sidebar-card .icon-circle {
             width: 60px; height: 60px;
-            background: var(--dark-bg);
+            background: #0b1f3a;
             color: white;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
@@ -685,6 +920,485 @@
             padding: 0 25px 25px;
             color: #666;
         }
+        
+
+        /* Contact Us Section */
+        .contact-section {
+            padding: 100px 0 150px;
+            background-color: white;
+            color: #333;
+        }
+        .contact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+        }
+        .contact-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+            color: #222;
+        }
+        .contact-header p {
+            max-width: 500px;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .contact-box {
+            background-color: #f6f6f6;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 24px;
+        }
+        .contact-box h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #111;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .contact-form label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .contact-form .form-control {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            background-color: white;
+            margin-bottom: 20px;
+        }
+        .contact-form .form-control:focus {
+            box-shadow: none;
+            border-color: #0b1f3a;
+        }
+        .btn-submit {
+            background-color: #0b1f3a;
+            color: white;
+            font-weight: 600;
+            padding: 14px 30px;
+            border-radius: 8px;
+            border: none;
+            width: 250px;
+            transition: opacity 0.3s;
+        }
+        .btn-submit:hover {
+            opacity: 0.9;
+            color: white;
+        }
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .contact-info-item i {
+            color: #0b1f3a;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+        .contact-info-item h6 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: #111;
+        }
+        .contact-info-item p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        .hours-item h6 {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #111;
+        }
+        .hours-item p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .contact-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color:#0b1f3a;
+            color: white;
+            padding: 80px 0 20px;
+        }
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 40px;
+        }
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .newsletter-form {
+            display: flex;
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+            padding: 5px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .newsletter-form input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            outline: none;
+            width: 300px;
+        }
+        .newsletter-form input::placeholder {
+            color: #888;
+        }
+        .newsletter-form button {
+            background-color: var(--accent-color);
+            color: black;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+        .footer-col h5 {
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-col h5::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 40px; height: 2px;
+            background-color: var(--accent-color);
+        }
+        .footer-col p, .footer-col ul li a {
+            color: #aaa;
+            font-size: 0.9rem;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+        .back-to-top {
+            background-color: var(--accent-color);
+            color: black;
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: opacity 0.3s;
+        }
+        .back-to-top:hover {
+            color: black;
+            opacity: 0.8;
+        }
+        
+        /* Utility for footer vertical dividers */
+        @media (min-width: 992px) {
+            .footer-divider-left {
+                border-left: 1px solid rgba(255,255,255,0.1);
+            }
+        }
+
+
+
+.feature-card{
+    background:#fff;
+    border-radius:24px;
+    padding:20px;
+    height:100%;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.35s ease;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 45px rgba(0,0,0,.12);
+}
+
+.feature-card .icon{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.bento-large{
+    min-height: 450px;
+    background-image: url('https://images.pexels.com/photos/27307400/pexels-photo-27307400.jpeg?_gl=1*1kybh5v*_ga*MTM3MTc5MTk3Ny4xNzgzNjYzMDgz*_ga_8JE65Q40S6*czE3ODM2NzQ3NDAkbzMkZzEkdDE3ODM2NzYwMjckajQ1JGwwJGgw');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.bento-large::before,
+.bento-wide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: -1;
+    border-radius: inherit;
+}
+
+.bento-large p, .bento-wide p,
+.bento-large h4, .bento-wide h4,
+.bento-large .icon, .bento-wide .icon {
+    color: white !important;
+}
+
+.bento-wide{
+    min-height: 250px;
+    background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+
+@media (max-width: 1199px) {
+    .property-img-wrapper {
+        margin-left: 0;
+        height: 700px;
+    }
+    .hero-bottom-left h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width:991px){
+    .bento-large,
+    .bento-wide{
+        min-height:auto;
+    }
+    .navbar {
+        background-color: var(--dark-bg) !important;
+        padding: 15px 0;
+    }
+    .navbar-toggler {
+        border-color: rgba(255,255,255,0.5);
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    .navbar-collapse {
+        background-color: var(--dark-bg);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+    .floating-card-right {
+        top: auto;
+        bottom: 25%;
+        right: 50%;
+        transform: translateX(50%);
+        width: 90%;
+        max-width: 300px;
+    }
+    .hero-bottom-left {
+        bottom: 50%;
+        width: 100%;
+        text-align: center;
+        left: 0;
+    }
+    .hero-bottom-right {
+        bottom: 5%;
+        right: 50%;
+        transform: translateX(50%);
+        align-items: center;
+        text-align: center;
+    }
+    .section-padding {
+        padding: 80px 0;
+    }
+    .property-img-wrapper {
+        height: 500px;
+    }
+    .property-price-card {
+        bottom: 15px;
+        left: 15px;
+        width: calc(100% - 30px);
+    }
+    .team-large-title {
+        font-size: 5rem;
+    }
+    .team-image-stack {
+        width: 100%;
+        max-width: 400px;
+        height: 450px;
+        margin-top: 50px;
+    }
+    .center-exp h2 {
+        font-size: 4rem;
+    }
+    .center-exp {
+        padding: 40px;
+    }
+    .testi-card.center-card:hover {
+        transform: none;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-title-bg {
+        font-size: 12vw;
+    }
+    .hero-title-fg {
+        font-size: 18vw;
+    }
+    .hero-bottom-left h2 {
+        font-size: 2rem;
+    }
+    .section-title {
+        font-size: 2.2rem;
+    }
+    .feature-icon-large {
+        font-size: 3rem;
+    }
+    .services-title {
+        font-size: 2rem;
+    }
+    .apt-marquee-track .apt-card {
+        width: 300px;
+    }
+    .team-large-title {
+        font-size: 3.5rem;
+    }
+    .team-image-stack {
+        height: 350px;
+    }
+    .center-exp h2 {
+        font-size: 3rem;
+    }
+    .exp-title {
+        font-size: 2.2rem;
+    }
+    .footer-col {
+        margin-bottom: 30px;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .contact-section, .faq-section, .testimonials-section, .apartments-section, .team-section, .experience-section, .services-section {
+        padding: 60px 0;
+    }
+    .footer-divider-left {
+        border-left: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-bg {
+        font-size: 15vw;
+    }
+    .hero-bottom-left h2 {
+        font-size: 1.5rem;
+    }
+    .floating-card-right {
+        bottom: 25%;
+    }
+    .center-exp h2 {
+        font-size: 2.5rem;
+    }
+    .center-exp {
+        padding: 20px;
+    }
+    .team-large-title {
+        font-size: 2.5rem;
+    }
+    .team-image-stack {
+        height: 280px;
+    }
+    .btn-submit {
+        width: 100%;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -693,19 +1407,19 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid px-5">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                <i class="bi bi-buildings-fill fs-4"></i> ATTOPE
+                <i class="bi bi-buildings-fill fs-4"></i> SQUAREONE INFRATECH
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Pages <i class="bi bi-chevron-down ms-1" style="font-size:0.7rem"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Properties <i class="bi bi-chevron-down ms-1" style="font-size:0.7rem"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Blog <i class="bi bi-chevron-down ms-1" style="font-size:0.7rem"></i></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#listings">LISTINGS </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">REVIEWS </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact </a></li>
                 </ul>
             </div>
             <a href="#" class="btn btn-get-started">GET STARTED <i class="bi bi-arrow-right"></i></a>
@@ -713,52 +1427,80 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://www.pexels.com/download/video/38038971/" type="video/mp4">
+        </video>
+        
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="hero-title-bg">MODERN</h1>
-            <div class="hero-title-fg">Real estate</div>
-        </div>
-
-        <div class="floating-card-right" data-aos="fade-left" data-aos-delay="500">
-            <img src="https://plus.unsplash.com/premium_photo-1678790910571-e7260e9bc730?w=500&auto=format&fit=crop" alt="Interior">
-            <h3>$60K</h3>
-            <p>Delivering exceptional property sales value for our clients</p>
+            <h1 class="hero-title-bg">SQUAREONE INFRATECH</h1>
+            <div class="hero-title-fg">__________</div>
         </div>
 
         <div class="hero-bottom-left" data-aos="fade-right" data-aos-delay="700">
-            <div class="play-btn">
-                <i class="bi bi-pause-fill"></i>
-            </div>
-            <h2>A PROPERTY DESIGNED<br>FOR YOUR LIFESTYLE</h2>
+            <h2>#1 REAL ESTATE CONSULTANTS<br>FOR DELHI-NCR</h2>
         </div>
 
         <div class="hero-bottom-right" data-aos="fade-up" data-aos-delay="900">
-            <i class="bi bi-asterisk fs-3"></i>
-            <p>Send, receive, and track real-time payments securely with full transparency instant.</p>
+            <p>Discover exceptional real estate opportunities with our premium consultation services across Delhi-NCR.</p>
             <button class="btn-explore">EXPLORE LOCATIONS <span><i class="bi bi-arrow-right"></i></span></button>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="section-padding features-section">
+    <!-- Partners Marquee -->
+    <div class="partner-marquee">
+        <div class="marquee-track">
+            <!-- Set 1 -->
+            <img src="./partners/dlf.png" alt="DLF">
+            <img src="./partners/godrej.png" alt="Godrej">
+            <img src="./partners/krisumi.png" alt="Krisumi">
+            <img src="./partners/prestige.png" alt="Prestige">
+            <img src="./partners/rrr.png" alt="RRR">
+            <img src="./partners/s.png" alt="S">
+            <!-- Set 2 -->
+            <img src="./partners/dlf.png" alt="DLF">
+            <img src="./partners/godrej.png" alt="Godrej">
+            <img src="./partners/krisumi.png" alt="Krisumi">
+            <img src="./partners/prestige.png" alt="Prestige">
+            <img src="./partners/rrr.png" alt="RRR">
+            <img src="./partners/s.png" alt="S">
+            <!-- Set 3 -->
+            <img src="./partners/dlf.png" alt="DLF">
+            <img src="./partners/godrej.png" alt="Godrej">
+            <img src="./partners/krisumi.png" alt="Krisumi">
+            <img src="./partners/prestige.png" alt="Prestige">
+            <img src="./partners/rrr.png" alt="RRR">
+            <img src="./partners/s.png" alt="S">
+             <!-- Set 4 -->
+            <img src="./partners/dlf.png" alt="DLF">
+            <img src="./partners/godrej.png" alt="Godrej">
+            <img src="./partners/krisumi.png" alt="Krisumi">
+            <img src="./partners/prestige.png" alt="Prestige">
+            <img src="./partners/rrr.png" alt="RRR">
+            <img src="./partners/s.png" alt="S">
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding features-section">
         <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-4" data-aos="fade-right">
+            <div class="row mb-5 align-items-center">
+                <div class="col-lg-5" data-aos="fade-right">
                     <i class="bi bi-house-door feature-icon-large d-block"></i>
-                    <p class="text-muted mt-4 pe-4">We help buyers and investors discover premium real estate opportunities with expert guidance, trusted insights, and carefully selected residential and commercial properties.</p>
+                    <p class="text-muted mt-4 pe-5" style="line-height: 1.8;">We help buyers and investors discover premium real estate opportunities with expert guidance, trusted insights, and carefully selected residential and commercial properties.</p>
                 </div>
-                <div class="col-lg-8" data-aos="fade-left">
-                    <div class="section-subtitle">WHY INVEST IN DUBAI</div>
+                <div class="col-lg-6 offset-lg-1" data-aos="fade-left">
+                    <div class="section-subtitle">WHY INVEST IN GURGAON</div>
                     <h2 class="section-title">FIND YOUR PERFECT SPACE IN PRIME LOCATIONS ACROSS GROWING MARKETS</h2>
                     
-                    <div class="profile-badges mt-4">
+                    <div class="profile-badges mt-5">
                         <div class="profile-img-group">
                             <img src="https://images.unsplash.com/photo-1783415337555-638fcdd02ba7?w=100&auto=format&fit=crop" alt="Room">
                             <img src="https://images.unsplash.com/photo-1781795095622-ca97592f416a?w=100&auto=format&fit=crop" alt="Person" class="ms-n3 border border-white border-3">
                         </div>
                         <div class="ms-3">
-                            <h5 class="mb-0 fw-bold">RYAN LEWIS</h5>
-                            <small class="text-muted">Campaign Manager</small>
+                            <h5 class="mb-0 fw-bold">KAREN SHAH</h5>
+                            <small class="text-muted">PROJECT Manager</small> 
                         </div>
                     </div>
                 </div>
@@ -791,10 +1533,10 @@
     </section>
 
     <!-- Properties Section -->
-    <section class="section-padding properties-section">
+    <section  class="section-padding properties-section">
         <div class="container">
             <div class="row align-items-center g-5">
-                <div class="col-lg-6" data-aos="fade-right">
+                <div class="col-lg-7" data-aos="fade-right">
                     <div class="property-img-wrapper">
                         <img src="https://images.unsplash.com/photo-1783388814220-9851f3da88f6?w=800&auto=format&fit=crop" alt="Building">
                         <div class="property-price-card" data-aos="zoom-in" data-aos-delay="300">
@@ -809,7 +1551,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                <div id="properties" class="col-lg-5 ps-lg-5" data-aos="fade-left">
                     <div class="section-subtitle">INVESTMENT PROPERTIES</div>
                     <h2 class="section-title mb-5">EXPLORE HIGH-VALUE PROPERTY INVESTMENTS</h2>
                     
@@ -841,7 +1583,122 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Comprehensive Services Section -->
+<section id="services" class="services-section text-center">
+    <div class="container">
+        <div class="services-subtitle" data-aos="fade-up">COMPLETE SOLUTIONS</div>
+        <h2 class="services-title" data-aos="fade-up" data-aos-delay="100">
+            Comprehensive Real Estate Services
+        </h2>
+        <p class="services-desc" data-aos="fade-up" data-aos-delay="200">
+            From consultation to closure, we provide end-to-end real estate solutions tailored to your needs
+        </p>
+
+        <div class="row g-4">
+
+            <!-- Left Large Card -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-card bento-large">
+                    <i class="bi bi-camera-video icon"></i>
+                    <h4>SALE</h4>
+                    <p>End-to-end sale support from discovery to closure.</p>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="col-lg-6">
+                <div class="row g-4">
+
+                    <!-- Purchase -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-card">
+                            <i class="bi bi-map icon"></i>
+                            <h4>PURCHASE</h4>
+                            <p>Expert guidance for your property investment decisions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Rentals -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-card">
+                            <i class="bi bi-house-add icon"></i>
+                            <h4>RENTALS</h4>
+                            <p>Comprehensive rental solutions for tenants and landlords.</p>
+                        </div>
+                    </div>
+
+                    <!-- Legal -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-card">
+                            <i class="bi bi-file-earmark-text icon"></i>
+                            <h4>LEGAL SERVICES</h4>
+                            <p>Complete legal documentation and compliance support.</p>
+                        </div>
+                    </div>
+
+                    <!-- Interior -->
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="feature-card">
+                            <i class="bi bi-palette icon"></i>
+                            <h4>INTERIOR DESIGN</h4>
+                            <p>Professional interior design and renovation services.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Bottom Wide Card -->
+            <div class="col-12" data-aos="fade-up" data-aos-delay="600">
+                <div class="feature-card bento-wide">
+                    <i class="bi bi-buildings icon"></i>
+                    <h4>PROPERTY CONSULTATION</h4>
+                    <p>
+                        Personalized real estate consultation to help you buy, sell,
+                        rent, or invest with confidence and make informed decisions.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Experience Section 
     <section class="experience-section">
         <div class="container">
             <i class="bi bi-asterisk star-icon" data-aos="spin"></i>
@@ -861,31 +1718,39 @@
             <img src="https://images.unsplash.com/photo-1781795095622-ca97592f416a?w=300&auto=format&fit=crop" class="float-img float-img-3" data-aos="fade-right" data-aos-delay="300" alt="">
             <img src="https://images.unsplash.com/photo-1783388814220-9851f3da88f6?w=300&auto=format&fit=crop" class="float-img float-img-4" data-aos="fade-left" data-aos-delay="500" alt="">
         </div>
-    </section>
+    </section>-->
 
-    <!-- Benefits Section -->
-    <section class="section-padding benefits-section">
+    <!-- Our Process Section -->
+    <section id="process" class="section-padding benefits-section">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1783388814220-9851f3da88f6?w=800&auto=format&fit=crop" alt="Building in clouds" class="img-fluid rounded-4" style="height: 700px; width: 100%; object-fit: cover;">
+                    <img src="https://images.pexels.com/photos/29517902/pexels-photo-29517902.jpeg" alt="Building in clouds" class="img-fluid rounded-4" style="height: 950px; width: 100%; object-fit: cover;">
                 </div>
                 <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
-                    <div class="section-subtitle">INVESTMENT BENEFITS</div>
-                    <h2 class="section-title mb-4">PREMIUM REAL ESTATE FOR SMART INVESTORS</h2>
-                    <p class="text-muted mb-5">Discover premium residential and commercial properties designed for comfort, investment potential, and modern lifestyles in prime locations.</p>
+                    <div class="section-subtitle">Our Process</div>
+                    <h2 class="section-title mb-4">HOW WE DO IT </h2>
+                    <p class="text-muted mb-5">At Squareone Infratech, we're a passionate team of young real-estate consultants committed to helping you make informed and strategic property investments. We begin by understanding your needs and expectations, then identify high-appreciation opportunities that best suit your goals. Our end-to-end service ensures a seamless experience—from property selection to final closure—keeping the entire process smooth, stress-free, and focused on your success.</p>
                     
                     <div class="benefit-pill">
                         <i class="bi bi-file-earmark-text"></i>
-                        <h5>TAX-EFFICIENT PROPERTY OWNERSHIP</h5>
+                        <h5>NEED ASSESSMENT</h5>
                     </div>
                     <div class="benefit-pill">
                         <i class="bi bi-graph-up-arrow"></i>
-                        <h5>STABLE ECONOMY & STRONG INFRASTRUCTURE</h5>
+                        <h5>SHORTLISTING</h5>
                     </div>
                     <div class="benefit-pill">
                         <i class="bi bi-person-check"></i>
-                        <h5>INVESTOR-FRIENDLY REGULATIONS</h5>
+                        <h5>SITE VISITS</h5>
+                    </div>
+                                        <div class="benefit-pill">
+                        <i class="bi bi-person-check"></i>
+                        <h5>NEGOTIATION</h5>
+                    </div>
+                                        <div class="benefit-pill">
+                        <i class="bi bi-person-check"></i>
+                        <h5>PAPERWORK</h5>
                     </div>
 
                     <button class="btn-search">START SEARCH <span><i class="bi bi-arrow-right"></i></span></button>
@@ -895,75 +1760,220 @@
     </section>
 
     <!-- Apartments Section -->
-    <section class="apartments-section">
+    <section id="listings" class="apartments-section">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up">
-                <div class="section-subtitle justify-content-center">AVAILABLE APARTMENTS</div>
-                <h2 class="section-title">EXCLUSIVE PROPERTIES IN THE WORLD'S<br>MOST DESIRED LOCATIONS</h2>
+                <div class="section-subtitle justify-content-center">PRIME LOCATIONS</div>
+                <h2 class="section-title">EXCLUSIVE PROPERTIES<br>ACROSS CITIES</h2>
+                <p class="text-muted mb-5">Discover premium real estate opportunities in India's most prestigious locations.</p>
+
             </div>
             
-            <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+<div class="apt-marquee-wrapper">
+                <div class="apt-marquee-track apt-track-left">
+                    <!-- Set 1 -->
                     <div class="apt-card">
                         <img src="https://images.unsplash.com/photo-1783388814220-9851f3da88f6?w=500&auto=format&fit=crop" alt="Apartment">
-                        <h4>TOWER ONE - 10 FLOOR 10B</h4>
-                        <div class="apt-stats">
-                            <div><i class="bi bi-bounding-box"></i> 1400 sqft</div>
-                            <div><i class="bi bi-car-front"></i> 2</div>
-                            <div><i class="bi bi-droplet"></i> 2</div>
-                            <div><span class="border px-1">P</span> 1</div>
-                        </div>
+                        <h4>DELHI  </h4>
+                        
                     </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="apt-card">
                         <img src="https://images.unsplash.com/photo-1781795095622-ca97592f416a?w=500&auto=format&fit=crop" alt="Apartment">
-                        <h4>TOWER ONE - 2 FLOOR 2C</h4>
-                        <div class="apt-stats">
-                            <div><i class="bi bi-bounding-box"></i> 1600 sqft</div>
-                            <div><i class="bi bi-car-front"></i> 4</div>
-                            <div><i class="bi bi-droplet"></i> 2</div>
-                            <div><span class="border px-1">P</span> 2</div>
-                        </div>
+                        <h4>GURGAON  </h4>
+
                     </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="apt-card">
                         <img src="https://images.unsplash.com/photo-1783415337555-638fcdd02ba7?w=500&auto=format&fit=crop" alt="Apartment">
-                        <h4>TOWER TWO - 17 FLOOR 17B</h4>
-                        <div class="apt-stats">
-                            <div><i class="bi bi-bounding-box"></i> 1500 sqft</div>
-                            <div><i class="bi bi-car-front"></i> 3</div>
-                            <div><i class="bi bi-droplet"></i> 2</div>
-                            <div><span class="border px-1">P</span> 1</div>
+                        <h4>NOIDA</h4>
+
+                    </div>
+                      <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>BANGLORE</h4>
+
+                    </div>
+                    <!-- Duplicate Set 1 for loop -->
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1783388814220-9851f3da88f6?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>DELHI  </h4>
+
+                    </div>
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1781795095622-ca97592f416a?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>GURGAON  </h4>
+
+                    </div>
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1783415337555-638fcdd02ba7?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>NOIDA</h4>
+
+                    </div>
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>BANGLORE</h4>
+
+                    </div>
+                </div>
+
+            <div class="apt-marquee-track apt-track-right mt-2">
+                    <!-- Set 2 -->
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>MUMBAI</h4>
+
+                    </div>
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>PUNE </h4>
+
+                    </div>
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1783501734019-182f4e1c07ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDl8TThqVmJMYlRSd3N8fGVufDB8fHx8fA%3D%3D" alt="Apartment">
+                        <h4>Chandigarh </h4>
+
+                    </div>
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>Dehradun</h4>
+
+                    </div>
+                    <!-- Duplicate Set 2 -->
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>MUMBAI</h4>
+
+                    </div>
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>PUNE </h4>
+
+                    </div>
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1783501734019-182f4e1c07ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDl8TThqVmJMYlRSd3N8fGVufDB8fHx8fA%3D%3D" alt="Apartment">
+                        <h4>Chandigarh </h4>
+
+                    </div>
+                    <div class="apt-card">
+                        <img src="https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?w=500&auto=format&fit=crop" alt="Apartment">
+                        <h4>Dehradun</h4>
+
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </section>
+
+    <!-- Our  Expertise Section -->
+    <section class="team-section">
+        <div class="container-fluid">
+            <h1 class="team-large-title" data-aos="fade-up">OUR  EXPERTISE</h1>
+            <div class="container mt-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-3" data-aos="fade-right">
+                        <h3 class="mb-3">MEET OUR<br>DISTINGUISHED TEAM</h3>
+                        <p class="text-muted small">500+ Successful Projects</p>
+                    </div>
+                    <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="team-image-stack">
+                            <div class="stack-bg-1"></div>
+                            <div class="stack-bg-2"></div>
+                            <div id="teamCarousel" class="carousel slide stack-img" data-bs-ride="carousel" data-bs-interval="3000">
+                                <div class="carousel-inner h-100" style="border-radius: 20px;">
+                                    <div class="carousel-item active h-100 position-relative">
+                                        <img src="https://images.unsplash.com/photo-1770510067230-1059f0776b3a?q=80&w=772&auto=format&fit=crop" class="d-block w-100 h-100" style="object-fit: cover;" alt="Team member 1">
+                                        <div class="team-member-info">
+                                            <h5>Ashutosh Kataria</h5>
+                                            <p>Consultant</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item h-100 position-relative">
+                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop" class="d-block w-100 h-100" style="object-fit: cover;" alt="Team member 2">
+                                        <div class="team-member-info">
+                                            <h5>Saurav Kumar</h5>
+                                            <p>Consultant</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item h-100 position-relative">
+                                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop" class="d-block w-100 h-100" style="object-fit: cover;" alt="Team member 3">
+                                        <div class="team-member-info">
+                                            <h5>Siddharth Awana</h5>
+                                            <p>Consultant</p>
+                                        </div>
+                                    </div>
+                                     <div class="carousel-item h-100 position-relative">
+                                        <img src="https://images.unsplash.com/photo-1733348137479-2e726d326d9b?w=500&auto=format&fit=crop" class="d-block w-100 h-100" style="object-fit: cover;" alt="Team member 4">
+                                        <div class="team-member-info">
+                                            <h5>Karman Chadha</h5>
+                                            <p>Consultant</p>
+                                        </div>
+                                    </div>
+                                     <div class="carousel-item h-100 position-relative">
+                                        <img src="https://plus.unsplash.com/premium_photo-1663011465208-a7ae4d411001?w=500&auto=format&fit=crop" class="d-block w-100 h-100" style="object-fit: cover;" alt="Team member 5">
+                                        <div class="team-member-info">
+                                            <h5>KAREN SHAH</h5>
+                                            <p>project manager</p>
+                                        </div>
+                                    </div>
+                                </div>
+                               <!-- <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>-->
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-lg-3" data-aos="fade-left" data-aos-delay="400">
+                        <div class="quote-icon"><i class="bi bi-quote"></i></div>
+                        <p class="text-muted small">Experienced professionals dedicated to delivering exceptional real estate solutions.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Team Section -->
-    <section class="team-section">
-        <div class="container-fluid">
-            <h1 class="team-large-title" data-aos="fade-up">OUR TEAM</h1>
-            <div class="container mt-5">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-3" data-aos="fade-right">
-                        <i class="bi bi-asterisk fs-1 d-block mb-4"></i>
-                        <h3 class="mb-3">WHAT OUR<br>CLIENTS SAY</h3>
-                        <p class="text-muted small">500+ Successful transactions</p>
-                    </div>
-                    <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="team-image-stack">
-                            <div class="stack-bg-1"></div>
-                            <div class="stack-bg-2"></div>
-                            <img src="https://images.unsplash.com/photo-1781795095622-ca97592f416a?w=800&auto=format&fit=crop" alt="Team member" class="stack-img">
+    <!-- Testimonials Section -->
+    <section id="reviews" class="testimonials-section text-center">
+        <div class="container">
+            <div class="testi-badge" data-aos="fade-up">Testimonials <i class="bi bi-emoji-smile"></i></div>
+            <h2 class="testi-title" data-aos="fade-up" data-aos-delay="100">Our TRUSTED CLIENTS</h2>
+            <p class="testi-desc" data-aos="fade-up" data-aos-delay="200">Our mission is to drive progress and enhance the lives of our customers by delivering superior products and services that exceed expectations.</p>
+
+            <div class="row g-4 justify-content-center mt-5">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testi-card center-card">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop" alt="Rajesh Kumar" class="testi-avatar">
+                        <h5>Rajesh Kumar</h5>
+                        <p class="testi-handle">New Delhi, India</p>
+                        <p class="testi-text">"Exceptional service from start to finish. The team helped us find our dream home in Delhi with complete transparency and professionalism."</p>
+                        <div class="testi-rating">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                         </div>
                     </div>
-                    <div class="col-lg-3" data-aos="fade-left" data-aos-delay="400">
-                        <div class="quote-icon"><i class="bi bi-quote"></i></div>
-                        <p class="text-muted small">Working with the team made buying our first home easy and stress-free. Their strong market insight and honest advice helped us choose the right property within our budget. Highly recommended!</p>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testi-card center-card">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop" alt="Priya Sharma" class="testi-avatar">
+                        <h5>Priya Sharma</h5>
+                        <p class="testi-handle">Gurgaon, India</p>
+                        <p class="testi-text">"Outstanding support throughout our property purchase. Their market knowledge and negotiation skills saved us both time and money."</p>
+                        <div class="testi-rating">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testi-card center-card">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop" alt="Amit Patel" class="testi-avatar">
+                        <h5>Amit Patel</h5>
+                        <p class="testi-handle">Noida, India</p>
+                        <p class="testi-text">"Highly recommend Squareone Infratech. They made our property investment journey smooth and stress-free with their expert guidance."</p>
+                        <div class="testi-rating">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1052,6 +2062,177 @@
             </div>
         </div>
     </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-header" data-aos="fade-up">
+                <h2>CONTACT US</h2>
+                <p>If you have any questions, please feel free to get in touch with us via phone, text, email, the form below, or even on social media!</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Left Column: Form -->
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-box contact-form h-100">
+                        <h4>GET IN TOUCH</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>NAME</label>
+                                <input type="text" class="form-control" placeholder="Enter your name*">
+                            </div>
+                            <div class="col-md-6">
+                                <label>PHONE NUMBER</label>
+                                <input type="tel" class="form-control" placeholder="Enter your phone number*">
+                            </div>
+                            <div class="col-12">
+                                <label>EMAIL</label>
+                                <input type="email" class="form-control" placeholder="Enter your email*">
+                            </div>
+                            <div class="col-12">
+                                <label>YOUR MESSAGE</label>
+                                <textarea class="form-control" rows="5" placeholder=""></textarea>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <button class="btn-submit">SEND MESSAGE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Info & Hours -->
+                <div class="col-lg-6 d-flex flex-column gap-4" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Contact Info -->
+                    <div class="contact-box mb-0 flex-grow-1">
+                        <h4>CONTACT INFORMATION</h4>
+                        <div class="contact-info-grid">
+                            <div class="contact-info-item">
+                                <i class="bi bi-telephone"></i>
+                                <div>
+                                    <h6>PHONE</h6>
+                                    <p>+91 96679 29667</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="bi bi-geo-alt"></i>
+                                <div>
+                                    <h6>ADDRESS</h6>
+                                    <p>Sector 62, Noida, Uttar Pradesh 201309</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="bi bi-envelope"></i>
+                                <div>
+                                    <h6>EMAIL</h6>
+                                    <p>info@squareoneinfratech.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <i class="bi bi-geo-alt"></i>
+                                <div>
+                                    <h6>ADDRESS</h6>
+                                    <p>Sector 47, Gurgaon, Haryana 122018</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="contact-box mb-0 flex-grow-1">
+                        <h4>BUSINESS HOURS</h4>
+                        <div class="hours-grid">
+                            <div class="hours-item">
+                                <h6>MONDAY - FRIDAY</h6>
+                                <p>10:00 am - 5:00 pm</p>
+                            </div>
+                            <div class="hours-item">
+                                <h6>SATURDAY</h6>
+                                <p>12:00 pm - 5:00 pm</p>
+                            </div>
+                            <div class="hours-item">
+                                <h6>SUNDAY</h6>
+                                <p>2:00 pm - 5:00 pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Top Section -->
+            <div class="footer-top row gy-4">
+                <div class="col-md-6">
+                    <div class="footer-brand">
+                        <i class="bi bi-buildings-fill fs-3"></i> SQUAREONE INFRATECH
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-md-end">
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="button">Let's Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Section -->
+            <div class="row g-5">
+                <div class="col-lg-4 footer-col pe-lg-5">
+                    <h5>About Company</h5>
+                    <p class="mb-4">At SQUAREONE INFRATECH, we combine professional real estate expertise with dependable advisory services to make every property transaction smooth and successful.</p>
+                    <p class="mb-1">Call us: +91 96679 29667</p>
+                    <p class="mb-1">Email: info@squareoneinfratech.com</p>
+                    <p class="mb-0">Hours: Mon - Fri 10 AM - 5 PM</p>
+                </div>
+                <div class="col-lg-2 col-md-4 footer-col footer-divider-left ps-lg-5">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 footer-col footer-divider-left ps-lg-5">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 footer-col footer-divider-left ps-lg-5">
+                    <h5>Our Services</h5>
+                    <ul>
+                        <li><a href="#">Property Sales</a></li>
+                        <li><a href="#">Real Estate Investment</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Consultation</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="footer-bottom">
+                <div>
+                    All Rights Reserved by SQUAREONE INFRATECH | Designed by <span style="color: var(--accent-color);">Zone Websites</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <a href="#" class="back-to-top"><i class="bi bi-chevron-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
